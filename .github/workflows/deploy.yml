@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # 只要 main 有更新，就會自動部署
+      - main   # 每次 push 到 main，就會自動部署
 
 jobs:
   build:
@@ -29,4 +29,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist   # Vite 預設輸出到 dist
+          publish_dir: ./dist
