@@ -19,7 +19,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install   # ✅ 改這裡，不用 npm ci
 
       - name: Build project
         run: npm run build
