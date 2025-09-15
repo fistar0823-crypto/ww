@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write   # 允許 workflow 寫入 gh-pages 分支
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,9 +20,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install   # ✅ 改這裡，不用 npm ci
+        run: npm install
 
       - name: Build project
         run: npm run build
