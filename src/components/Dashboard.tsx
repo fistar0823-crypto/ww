@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react'
+import QuickEntry from './QuickEntry'
+import RecordsList from './RecordsList'
 
-interface DashboardProps {
-  userId: string;
-  assetAccounts: any[];
-  cashflowRecords: any[];
-}
+export default function Dashboard() {
+  const userId = 'user123'
+  const assets = { cash: 50000, stock: 200000 }
 
-const Dashboard: React.FC<DashboardProps> = ({ userId, assetAccounts, cashflowRecords }) => {
   return (
     <div>
       <h2>Dashboard</h2>
@@ -14,27 +13,14 @@ const Dashboard: React.FC<DashboardProps> = ({ userId, assetAccounts, cashflowRe
 
       <h3>資產帳戶</h3>
       <ul>
-        {assetAccounts && assetAccounts.length > 0 ? (
-          assetAccounts.map((acc, i) => (
-            <li key={i}>{acc.account}: {acc.balance} 元</li>
-          ))
-        ) : (
-          <li>尚無資料</li>
-        )}
+        <li>現金: {assets.cash} 元</li>
+        <li>股票: {assets.stock} 元</li>
       </ul>
 
       <h3>現金流紀錄</h3>
-      <ul>
-        {cashflowRecords && cashflowRecords.length > 0 ? (
-          cashflowRecords.map((rec, i) => (
-            <li key={i}>{rec.date} - {rec.type}: {rec.amount} 元</li>
-          ))
-        ) : (
-          <li>尚無資料</li>
-        )}
-      </ul>
-    </div>
-  );
-};
+      <RecordsList />
 
-export default Dashboard;
+      <QuickEntry />
+    </div>
+  )
+}
