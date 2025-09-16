@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # ⚡ 當 main 分支有 push 時觸發
+      - main  # 當 main 分支有更新時觸發
 
 permissions:
-  contents: write  # 部署到 gh-pages 分支需要寫入權限
+  contents: write  # 允許寫入 gh-pages 分支
 
 jobs:
   build-and-deploy:
