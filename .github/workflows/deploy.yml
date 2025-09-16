@@ -3,14 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 只要 main branch 有更新就會自動部署
+      - main  # 只要 push 到 main 就會觸發
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -19,7 +19,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
