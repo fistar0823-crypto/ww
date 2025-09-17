@@ -1,3 +1,3 @@
-# ww-fullstack-ready
+# 理財系統
 
-完整可跑、可部署到 GitHub Pages，並可搭配 Cloudflare Worker 做雲端儲存。
+這是一個使用 React + Vite 開發的理財管理系統，支援 GitHub Pages 自動部署。
