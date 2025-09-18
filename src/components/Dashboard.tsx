@@ -7,7 +7,6 @@ export default function Dashboard() {
   return (
     <div className="container">
       <h1>理財系統</h1>
-
       <h2>Dashboard</h2>
       <p className="muted">使用者 ID: {data.userId}</p>
 
