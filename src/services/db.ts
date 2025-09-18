@@ -18,7 +18,6 @@ export function resetData() {
   setData(structuredClone(DEFAULT_DATA));
 }
 
-// helpers
 export function addCashflow(tx: Omit<Cashflow, 'id'>) {
   const data = getData();
   const id = crypto.randomUUID();
