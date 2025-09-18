@@ -1,14 +1,42 @@
-<!doctype html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>理財系統</title>
-    <script type="module" crossorigin src="/ww/assets/index-BvgZPssH.js"></script>
-    <link rel="stylesheet" crossorigin href="/ww/assets/index-BvXB_uxL.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- 這裡請用 /src/main.tsx（不要加 /ww/）-->
-  </body>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>理財系統</title>
+  <link rel="stylesheet" crossorigin href="/ww/assets/index-DLSeIPnw.css">
+</head>
+<body>
+  <h1>理財系統</h1>
+  <div class="tabs">
+    <button onclick="showTab('dashboard')">Dashboard</button>
+    <button onclick="showTab('manage')">資料管理</button>
+  </div>
+
+  <div id="dashboard" class="tab">
+    <h2>Dashboard</h2>
+    <p>使用者 ID: user123</p>
+    <h3>資產帳戶</h3>
+    <ul id="assets-list"></ul>
+    <h3>現金流紀錄</h3>
+    <ul id="transactions-list"></ul>
+  </div>
+
+  <div id="manage" class="tab hidden">
+    <h2>資料管理</h2>
+    <form id="add-transaction-form">
+      <label>日期: <input type="date" id="date" required /></label><br/>
+      <label>類別:
+        <select id="category">
+          <option value="收入">收入</option>
+          <option value="支出">支出</option>
+        </select>
+      </label><br/>
+      <label>金額: <input type="number" id="amount" required /></label><br/>
+      <label>備註: <input type="text" id="note" /></label><br/>
+      <button type="submit">新增紀錄</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
