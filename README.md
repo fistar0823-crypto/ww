@@ -1,10 +1,14 @@
-# 個人理財系統（GitHub Pages + LocalStorage）
+# 理財系統 (GitHub Pages 版)
 
-- 前端：React + Vite + TypeScript
-- 儲存：瀏覽器 LocalStorage（免後端、免資料庫）
-- 部署：GitHub Actions 自動部署到 Pages（`gh-pages` 分支）
+這是一個簡易的理財系統，可以：
+- 查看資產帳戶
+- 新增、刪除現金流紀錄
+- 使用 localStorage 儲存資料 (瀏覽器端)
 
-## 本地開發（選擇性）
-```bash
-npm i
-npm run dev
+## 使用方式
+直接開啟 [GitHub Pages 網址](https://your-username.github.io/ww-final/)。
+
+## 檔案結構
+- index.html: 主頁
+- style.css: 樣式
+- script.js: 功能程式
