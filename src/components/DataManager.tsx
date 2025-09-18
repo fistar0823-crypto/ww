@@ -3,16 +3,16 @@ import { addCashflow, getData, removeCashflow, resetData, setAssets } from '../s
 import type { TxType } from '../types';
 
 export default function DataManager() {
-  const [version, setVersion] = useState(0); // 讓畫面在寫入後重繪
+  const [version, setVersion] = useState(0);
   const data = useMemo(() => getData(), [version]);
 
-  const [date, setDate]     = useState<string>(new Date().toISOString().slice(0,10));
-  const [type, setType]     = useState<TxType>('income');
-  const [note, setNote]     = useState<string>('');
-  const [amount, setAmount] = useState<number>(1000);
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+  const [type, setType] = useState<TxType>('income');
+  const [note, setNote] = useState('');
+  const [amount, setAmount] = useState(1000);
 
-  const [cash, setCash]       = useState<number>(data.assets.cash);
-  const [stocks, setStocks]   = useState<number>(data.assets.stocks);
+  const [cash, setCash] = useState(data.assets.cash);
+  const [stocks, setStocks] = useState(data.assets.stocks);
 
   function refresh() { setVersion(v => v + 1); }
 
@@ -37,8 +37,9 @@ export default function DataManager() {
   function onReset() {
     if (!confirm('確定重置為預設資料？(不可復原)')) return;
     resetData();
-    setCash(getData().assets.cash);
-    setStocks(getData().assets.stocks);
+    const d = getData();
+    setCash(d.assets.cash);
+    setStocks(d.assets.stocks);
     refresh();
   }
 
