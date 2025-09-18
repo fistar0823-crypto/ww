@@ -1,17 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// Vite 設定檔
-// base 必須設定為你的 GitHub repo 名稱，這裡是 'ww'
 export default defineConfig({
   plugins: [react()],
-  base: '/ww/',
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-  },
-  server: {
-    port: 3000,
-    open: true,
-  }
-})
+  // 這裡要設為你的 GitHub repo 名稱前後加斜線
+  base: '/ww/'
+});
