@@ -1,11 +1,11 @@
 {
   "name": "理財系統",
-  "short_name": "理財",
+  "short_name": "FinanceApp",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "一個簡單的理財系統，用於管理資產與收支。",
+  "description": "個人理財系統",
   "icons": [
     {
       "src": "/favicon.ico",
